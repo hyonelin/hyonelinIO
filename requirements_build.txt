@@ -1,0 +1,5 @@
+Pillow==10.0.1
+requests==2.31.0
+schedule==1.2.0
+pyyaml==6.0.1
+py2app==0.28.0
