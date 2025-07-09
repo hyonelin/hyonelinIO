@@ -1,0 +1,37 @@
+# AI识别总结工具配置文件
+ollama:
+  base_url: "http://localhost:11434"
+  model: "llava:latest"  # 推荐使用llava模型进行图像分析
+  timeout: 30
+
+screenshot:
+  interval_minutes: 1  # 截图间隔（分钟）
+  save_screenshots: true  # 是否保存截图文件
+  screenshot_quality: 85  # 截图质量 (1-100)
+  
+storage:
+  data_dir: "./data"
+  database: "./data/activity_log.db"
+  screenshots_dir: "./data/screenshots"
+  
+analysis:
+  system_prompt: |
+    你是一个专业的屏幕内容分析助手。请仔细观察这张屏幕截图，识别用户正在进行的活动。
+    请用简洁的中文描述用户在做什么，包括：
+    1. 正在使用的应用程序或网站
+    2. 正在进行的具体活动
+    3. 活动的主要内容或目的
+    
+    请只回答关键信息，不要添加多余的解释。
+
+summary:
+  daily_summary_time: "23:30"  # 每日总结生成时间
+  summary_prompt: |
+    请根据以下一天的活动记录，生成一份简洁的中文总结报告。
+    总结应该包括：
+    1. 主要工作内容和时间分配
+    2. 使用的主要应用程序和工具
+    3. 学习或娱乐活动
+    4. 工作效率评估和建议
+    
+    请用条理清晰的格式呈现，重点突出有价值的信息。
